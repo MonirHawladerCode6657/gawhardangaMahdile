@@ -1,3 +1,266 @@
+ (() => {
+      const ua = navigator.userAgent || "";
+      // Detect Facebook's in-app browser. Regular Chrome/Firefox/Safari visitors won't see this.
+      const fromFacebookApp = /FBAN|FBAV|FB_IAB|FB4A|FBIOS|IMO/i.test(ua);
+      const gate = document.getElementById("facebookGate");
+      if (!fromFacebookApp || !gate) return;
+
+      gate.hidden = false;
+      document.body.classList.add("facebook-gate-open");
+
+      document.getElementById("copyPageLink").addEventListener("click", async () => {
+        const status = document.getElementById("copyLinkStatus");
+        const pageUrl = window.location.href;
+        try {
+          if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(pageUrl);
+          } else {
+            const helper = document.createElement("textarea");
+            helper.value = pageUrl;
+            helper.setAttribute("readonly", "");
+            helper.style.position = "fixed";
+            helper.style.opacity = "0";
+            document.body.appendChild(helper);
+            helper.select();
+            const copied = document.execCommand("copy");
+            helper.remove();
+            if (!copied) throw new Error("Copy failed");
+          }
+          status.textContent = "লিংক কপি হয়েছে। এখন Chrome খুলে লিংকটি পেস্ট করুন।";
+        } catch (err) {
+          status.textContent = "স্বয়ংক্রিয়ভাবে কপি হয়নি। নিচের লিংকটি চেপে ধরে কপি করুন:";
+          let manual = document.getElementById("manualPageLink");
+          if (!manual) {
+            manual = document.createElement("textarea");
+            manual.id = "manualPageLink";
+            manual.readOnly = true;
+            manual.value = pageUrl;
+            manual.rows = 3;
+            manual.style.cssText = "width:100%;margin-top:8px;padding:10px;border:1px solid #cbd8d3;border-radius:8px;";
+            status.insertAdjacentElement("afterend", manual);
+          }
+        }
+      });
+
+      document.getElementById("continueHere").addEventListener("click", () => {
+        gate.hidden = true;
+        document.body.classList.remove("facebook-gate-open");
+      });
+    })();
+ 
+
+const photochoose = document.getElementById("photochoose");
+const choosFreemName = document.querySelector('.choosFreemNamw');
+const imgadd_1 = document.getElementById('imgadd_1');
+const body =document.getElementById('body');
+
+photochoose.addEventListener('click', (e) => {
+    e.stopPropagation();
+
+    choosFreemName.style.display = 'flex';
+});
+
+// মেনুর ভেতরে ক্লিক করলে বন্ধ হবে না
+choosFreemName.addEventListener('click', (e) => {
+    e.stopPropagation();
+});
+
+// বাইরে ক্লিক করলে বন্ধ হবে
+document.addEventListener('click', () => {
+    choosFreemName.style.display = 'none';
+});
+
+
+
+
+
+
+
+
+
+
+const imgaddAll =document.querySelectorAll('img.imgaddAll');
+
+ imgadd_1.addEventListener('click',()=>{
+// আগে ছবি এডড করতে হবে তার পরে কাটবে 
+frameImage.src = "./assets/profile-frame-1.png";
+ });
+
+
+
+
+
+
+
+
+
+imgaddAll.forEach((btn)=>{
+  btn.addEventListener('click',()=>{
+switch (btn.id) {
+  case'imgadd_2': 
+  frameImage.src = "./assets/profile-frame-2.png";
+  console.log('monir hawladar');
+    break;
+
+  case'imgadd_3': 
+  frameImage.src = "./assets/profile-frame-3.png";
+    break;
+
+  case'imgadd_4': 
+  frameImage.src = "./assets/profile-frame-4.png";
+    break;
+
+  case'imgadd_5': 
+  frameImage.src = "./assets/profile-frame-5.png";
+    break;
+
+  case'imgadd_6': 
+  frameImage.src = "./assets/profile-frame-6.png";
+    break;
+
+  case'imgadd_7': 
+  frameImage.src = "./assets/profile-frame-7.png";
+    break;
+
+  case'imgadd_8': 
+  frameImage.src = "./assets/profile-frame-8.png";
+    break;
+
+  case'imgadd_9': 
+  frameImage.src = "./assets/profile-frame-9.png";
+    break;
+
+  case'imgadd_10': 
+  frameImage.src = "./assets/profile-frame-10.png";
+    break;
+
+  case'imgadd_11': 
+  frameImage.src = "./assets/profile-frame-11.png";
+    break;
+
+  case'imgadd_12': 
+  frameImage.src = "./assets/profile-frame-12.png";
+    break;
+
+  case'imgadd_13': 
+  frameImage.src = "./assets/profile-frame-13.png";
+    break;
+
+  case'imgadd_14': 
+  frameImage.src = "./assets/profile-frame-14.png";
+    break;
+
+  case'imgadd_15': 
+  frameImage.src = "./assets/profile-frame-15.png";
+    break;
+
+  case'imgadd_16': 
+  frameImage.src = "./assets/profile-frame-16.png";
+    break;
+
+  case'imgadd_17': 
+  frameImage.src = "./assets/profile-frame-17.png";
+    break;
+
+  case'imgadd_18': 
+  frameImage.src = "./assets/profile-frame-18.png";
+    break;
+
+  case'imgadd_19': 
+  frameImage.src = "./assets/profile-frame-19.png";
+    break;
+
+  case'imgadd_20': 
+  frameImage.src = "./assets/profile-frame-20.png";
+    break;
+
+  case'imgadd_21': 
+  frameImage.src = "./assets/profile-frame-21.png";
+    break;
+
+  case'imgadd_22': 
+  frameImage.src = "./assets/profile-frame-22.png";
+    break;
+
+  case'imgadd_23': 
+  frameImage.src = "./assets/profile-frame-23.png";
+    break;
+
+  case'imgadd_24': 
+  frameImage.src = "./assets/profile-frame-24.png";
+    break;
+
+  case'imgadd_25': 
+  frameImage.src = "./assets/profile-frame-25.png";
+    break;
+
+  case'imgadd_26': 
+  frameImage.src = "./assets/profile-frame-26.png";
+    break;
+
+  case'imgadd_27': 
+  frameImage.src = "./assets/profile-frame-27.png";
+    break;
+
+  case'imgadd_28': 
+  frameImage.src = "./assets/profile-frame-28.png";
+    break;
+
+  case'imgadd_29': 
+  frameImage.src = "./assets/profile-frame-29.png";
+    break;
+
+  case'imgadd_30': 
+  frameImage.src = "./assets/profile-frame-30.png";
+    break;
+
+  case'imgadd_31': 
+  frameImage.src = "./assets/profile-frame-31.png";
+    break;
+
+  case'imgadd_32': 
+  frameImage.src = "./assets/profile-frame-32.png";
+    break;
+
+  case'imgadd_33': 
+  frameImage.src = "./assets/profile-frame-33.png";
+    break;
+
+  case'imgadd_34': 
+  frameImage.src = "./assets/profile-frame-34.png";
+    break;
+
+
+  default:console.log('not mn');
+    break;
+}
+
+
+
+    choosFreemName.style.display='none'
+  })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const frameImage = new Image();
 frameImage.src = "./assets/profile-frame.png";
 
@@ -232,37 +495,120 @@ form.addEventListener("submit", async (event) => {
   }
 });
 
-downloadButton.addEventListener("click", () => {
-  if (!profileCreated) {
-    setStatus(
-      "আগে প্রোফাইল তৈরি করুন। অনুগ্রহ করে 'প্রোফাইল তৈরি করুন' বাটনে ক্লিক করুন।",
-      true
-    );
 
-    downloadButton.style.backgroundColor = "#dc2626";
-    downloadButton.style.color = "#ffffff";
+downloadButton.addEventListener("click", async () => {
+  if (!profileCreated || !uploadedPhoto || !photoReady) {
+    setStatus("আগে প্রোফাইল তৈরি করুন।", true);
     return;
   }
 
-  if (!uploadedPhoto || !photoReady) return;
   renderPreview();
-  canvas.toBlob((blob) => {
-    if (!blob) {
-      setStatus("ছবি তৈরি করা যায়নি। আবার চেষ্টা করুন।", true);
-      return;
+
+  try {
+    const blob = await new Promise((resolve, reject) => {
+      canvas.toBlob((result) => {
+        if (result) resolve(result);
+        else reject(new Error("PNG তৈরি হয়নি"));
+      }, "image/png");
+    });
+
+    const safeName = (
+      nameInput.value.trim() || "profile-pic"
+    ).replace(/[^\p{L}\p{N}_-]+/gu, "-").slice(0, 50);
+
+    const fileName = `${safeName}-profile.png`;
+    const file = new File([blob], fileName, {
+      type: "image/png"
+    });
+
+    // Facebook / Messenger browser শনাক্ত করা
+    const ua = navigator.userAgent || "";
+   const isFacebook = /FBAN|FBAV|FB_IAB|Instagram/i.test(ua);
+    // মোবাইলে শেয়ার সুবিধা থাকলে ছবি শেয়ার/সেভ করার সুযোগ
+    if (
+      isFacebook &&
+      navigator.canShare &&
+      navigator.share &&
+      navigator.canShare({ files: [file] })
+    ) {
+      try {
+        await navigator.share({
+          files: [file],
+          title: "প্রোফাইল ছবি",
+          text: "তৈরি করা প্রোফাইল ছবি"
+        });
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
     }
-    
+
+    // সরাসরি ডাউনলোডের চেষ্টা
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
-    const safeName = (nameInput.value.trim() || "profile-pic").replace(/[^\p{L}\p{N}_-]+/gu, "-").slice(0, 50);
+
     link.href = url;
-    link.download = `${safeName}-gawhar-madrasa-profile.png`;
+    link.download = fileName;
+    link.style.display = "none";
+
     document.body.appendChild(link);
     link.click();
     link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1000);
-  }, "image/png");
+
+    setTimeout(() => URL.revokeObjectURL(url), 60000);
+
+    if (isFacebook) {
+      setStatus(
+        "ডাউনলোড শুরু না হলে নিচের বিকল্প ব্যবহার করুন।"
+      );
+
+      showDownloadFallback(blob, fileName);
+    } else {
+      setStatus("ডাউনলোডের অনুরোধ পাঠানো হয়েছে।");
+    }
+
+  } catch (error) {
+    console.error(error);
+    setStatus("ছবি তৈরি বা ডাউনলোড করা যায়নি।", true);
+  }
 });
+
+function showDownloadFallback(blob, fileName) {
+  let box = document.getElementById("downloadFallback");
+
+  if (!box) {
+    box = document.createElement("div");
+    box.id = "downloadFallback";
+    box.style.cssText =
+      "margin:16px 0;padding:16px;border:1px solid #ddd;" +
+      "border-radius:12px;text-align:center;";
+
+    downloadButton.insertAdjacentElement("afterend", box);
+  }
+
+  const url = URL.createObjectURL(blob);
+
+  box.replaceChildren();
+
+  const message = document.createElement("p");
+  message.textContent =
+    "Facebook-এ ডাউনলোড কাজ না করলে ছবিটি খুলে সেভ করার চেষ্টা করুন।";
+
+  const openLink = document.createElement("a");
+  openLink.href = url;
+  openLink.target = "_blank";
+  openLink.rel = "noopener";
+  openLink.textContent = "ছবি খুলুন / সেভ করুন";
+  openLink.download = fileName;
+  openLink.style.cssText =
+    "display:inline-block;padding:12px 18px;" +
+    "background:#1877f2;color:white;border-radius:8px;" +
+    "text-decoration:none;";
+
+  box.append(message, openLink);
+}
+
+
 
 resetButton.addEventListener("click", () => {
   form.reset();
@@ -278,3 +624,5 @@ downloadButton.style.color = "";
 });
 
 renderPreview();
+
+   

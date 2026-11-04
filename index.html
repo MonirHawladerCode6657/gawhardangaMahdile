@@ -5,11 +5,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08766f">
-  <title>গওহরডাঙ্গা মাদরাসা | প্রোফাইল পিক তৈরি করুন</title>
+  <title> গওহরডাঙ্গা মাদরাসা | প্রোফাইল পিক তৈরি করুন</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="body">
+
+
+
+
+<section class="choosFreemNamw">
+  <img id="imgadd_1" class="imgaddAll" src="./assets/profile-frame-1.png" alt="">
+  <img id="imgadd_2" class="imgaddAll" src="./assets/profile-frame-2.png" alt="">
+  <img id="imgadd_3" class="imgaddAll" src="./assets/profile-frame-3.png" alt="">
+  <img id="imgadd_4" class="imgaddAll" src="./assets/profile-frame-4.png" alt="">
+  <img id="imgadd_5" class="imgaddAll" src="./assets/profile-frame-5.png" alt="">
+  <img id="imgadd_6" class="imgaddAll" src="./assets/profile-frame-6.png" alt="">
+  <img id="imgadd_7" class="imgaddAll" src="./assets/profile-frame-7.png" alt="">
+  <img id="imgadd_8" class="imgaddAll" src="./assets/profile-frame-8.png" alt="">
+  <img id="imgadd_9" class="imgaddAll" src="./assets/profile-frame-9.png" alt="">
+  <img id="imgadd_10" class="imgaddAll" src="./assets/profile-frame-10.png" alt="">
+  <img id="imgadd_11" class="imgaddAll" src="./assets/profile-frame-11.png" alt="">
+  <img id="imgadd_12" class="imgaddAll" src="./assets/profile-frame-12.png" alt="">
+  <img id="imgadd_13" class="imgaddAll" src="./assets/profile-frame-13.png" alt="">
+  <img id="imgadd_14" class="imgaddAll" src="./assets/profile-frame-14.png" alt="">
+  <img id="imgadd_15" class="imgaddAll" src="./assets/profile-frame-15.png" alt="">
+  <img id="imgadd_16" class="imgaddAll" src="./assets/profile-frame-16.png" alt="">
+  <img id="imgadd_17" class="imgaddAll" src="./assets/profile-frame-17.png" alt="">
+  <img id="imgadd_18" class="imgaddAll" src="./assets/profile-frame-18.png" alt="">
+  <img id="imgadd_19" class="imgaddAll" src="./assets/profile-frame-19.png" alt="">
+  <img id="imgadd_20" class="imgaddAll" src="./assets/profile-frame-20.png" alt="">
+
+</section>
+
+
+
+
+
+  <section id="facebookGate" class="facebook-gate" hidden aria-labelledby="facebookGateTitle">
+    <div class="facebook-gate-card">
+      <div class="facebook-gate-icon" aria-hidden="true">🌐</div>
+      <p class="facebook-gate-label">Facebook থেকে প্রবেশ করেছেন</p>
+      <h2 id="facebookGateTitle">ডাউনলোড করতে Chrome-এ খুলুন</h2>
+      <p>Facebook-এর ভেতরের ব্রাউজারে ছবি ডাউনলোড কাজ নাও করতে পারে। নিচের বাটনে লিংক কপি করে Chrome ব্রাউজারে খুলুন।
+      </p>
+      <button type="button" id="copyPageLink" class="gate-button">🔗 লিংক কপি করুন</button>
+      <p id="copyLinkStatus" class="gate-status" role="status" aria-live="polite"></p>
+      <div class="gate-instructions">
+        <strong>যেভাবে খুলবেন</strong>
+        <ol>
+          <li>“লিংক কপি করুন” বাটনে চাপ দিন।</li>
+          <li>Chrome ব্রাউজার খুলুন।</li>
+          <li>অ্যাড্রেস বারে লিংক পেস্ট করে Go/Enter চাপ দিন।</li>
+        </ol>
+      </div>
+      <button type="button" id="continueHere" class="gate-secondary">এখানেই চালিয়ে যান</button>
+    </div>
+  </section>
+
   <header class="site-header">
     <div class="header-inner">
       <div class="brand-mark" aria-hidden="true"><img src="./assets/মাদরাসার লোগু নিউ-01.png" alt=""></div>
@@ -19,6 +72,10 @@
       </div>
     </div>
   </header>
+
+  <div id="baner">
+    <img src="./assets/madrasharPic.jpeg" alt="">
+  </div>
 
   <main class="layout">
 
@@ -46,17 +103,28 @@
           <label for="photoInput">আপনার ছবি আপলোড করুন</label>
 
           <div class="custom-file-upload">
-            <input id="photoInput" name="photo" type="file" accept="image/png,image/jpeg,image/webp" required>
+           
 
-            <label for="photoInput" class="upload-button">
-              📷 ছবি নির্বাচন করুন
-            </label>
+     
+                <input id="photoInput" name="photo" type="file" accept="image/png,image/jpeg,image/webp" required>
+                 <div class="photoInputLayout_1">
+                <label for="photoInput" class="upload-button">
+                  📷 ছবি নির্বাচন করুন
+                </label>
+                 <label class="upload-button" id="photochoose">
+                  📷  ফ্রেম নির্বাচন করুন
+                 </label>
+                 </div>
+                <span id="fileName" aria-live="polite">
+                  এখনো কোনো ছবি নির্বাচন করেননি
+                </span>
+          
+            </div>
 
-            <span id="fileName" aria-live="polite">
-              এখনো কোনো ছবি নির্বাচন করেননি
-            </span>
-          </div>
+       
 
+            
+        
           <small class="hint">
             JPG, PNG অথবা WebP ছবি নির্বাচন করুন।
           </small>
@@ -107,7 +175,8 @@
         <button id="resetButton" class="button button-secondary" type="button">আবার শুরু করুন</button>
       </div>
       <p class="muted preview-help">ছবিটি তৈরি হলে প্রিভিউতে দেখে নিন, তারপর PNG ফাইল ডাউনলোড করুন।</p>
-      <p style="color: red; font-weight: bold;">ডাউনলোড না হলে লিঙ্ক টা কপি করে ক্রোমে খুলুন অর্থাৎ এটাই ক্রোমে ব্রাউজারে ওপেন করুন</p>
+      <p style="color: red; font-weight: bold;">ডাউনলোড না হলে লিঙ্ক টা কপি করে ক্রোমে খুলুন অর্থাৎ এটাই ক্রোমে
+        ব্রাউজারে ওপেন করুন</p>
     </section>
 
 
@@ -116,21 +185,24 @@
 
 
 
-    <div class="ma-prochar">
-      <h1> 📢 মাহফিলের সকল গুরুত্বপূর্ণ তথ্য, সময়সূচি, নতুন আপডেট এবং সরাসরি লাইভ সম্প্রচার পেতে নিচের বাটনে ক্লিক করে আমাদের ফলো করুন। </h1>
-      <section class="followButton">
-       <a href="https://www.facebook.com/share/1A2LrEtpX6/"><button class="fb-b1" >Follow</button></a> 
-       <a href="https://youtube.com/@gawharmediaofficial?si=C8CGwPa1Oh84qgrJ"> <button class="fb-b2">Subscride</button></a>
-      </section>
-    </div>
+  <div class="ma-prochar">
+    <h1> 📢 মাহফিলের সকল গুরুত্বপূর্ণ তথ্য, সময়সূচি, নতুন আপডেট এবং সরাসরি লাইভ সম্প্রচার পেতে নিচের বাটনে ক্লিক করে
+      আমাদের ফলো করুন। </h1>
+    <section class="followButton">
+      <a href="https://www.facebook.com/share/1A2LrEtpX6/"><button class="fb-b1">Follow</button></a>
+      <a href="https://youtube.com/@gawharmediaofficial?si=C8CGwPa1Oh84qgrJ"> <button
+          class="fb-b2">Subscride</button></a>
+    </section>
+  </div>
 
- 
 
- <div style=" height: 200px; width:fit-content; margin:auto; box-sizing: border-box; display: flex; justify-content: center; "> <img src="./assets/মাহফিল পোস্টার-20.png" alt=""></div>
+
+  <div id="posterBaner"> <img src="./assets/মাহফিল পোস্টার-20.png" alt=""></div>
   <footer>
     <p>গওহরডাঙ্গা মাদ্রাসা · মাহফিল প্রোফাইল পিক জেনারেটর</p>
     <p>Monir Hawladar</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 

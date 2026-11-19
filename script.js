@@ -320,7 +320,7 @@ function drawPhoto() {
   ctx.save();
   // Clip to the open circular area so the photo never covers the frame's outer decoration.
   ctx.beginPath();
-  ctx.arc(600, 600, 425, 0, Math.PI * 2);
+  ctx.arc(600, 600, 480, 0, Math.PI * 2);
   ctx.clip();
   ctx.drawImage(image, x, y, width, height);
   ctx.restore();

@@ -28,7 +28,13 @@ body {
   color: var(--ink);
   font-family: "SolaimanLipi", system-ui, sans-serif;
   position: relative;
-  
+  background-image:linear-gradient(rgba(255, 255, 255, 0.8),rgba(255, 255, 255, 0.8)), url(./assets/texture.png);
+  background-size:contain;
+  background-repeat:repeat ;
+
+}
+.ruhul_amin{
+  color: red;
 }
 
 #baner {
